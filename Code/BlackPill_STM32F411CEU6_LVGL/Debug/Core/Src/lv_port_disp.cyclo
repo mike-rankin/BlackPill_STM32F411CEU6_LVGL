@@ -1,0 +1,6 @@
+../Core/Src/lv_port_disp.c:56:6:lv_port_disp_init	1
+../Core/Src/lv_port_disp.c:104:13:disp_init	1
+../Core/Src/lv_port_disp.c:113:6:disp_enable_update	1
+../Core/Src/lv_port_disp.c:120:6:disp_disable_update	1
+../Core/Src/lv_port_disp.c:129:13:disp_flush	2
+../Core/Src/lv_port_disp.c:139:6:GC9A01_FlushReady	1

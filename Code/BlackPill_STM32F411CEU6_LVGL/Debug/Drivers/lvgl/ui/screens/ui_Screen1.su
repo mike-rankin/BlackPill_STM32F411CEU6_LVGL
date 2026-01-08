@@ -1,0 +1,2 @@
+../Drivers/lvgl/ui/screens/ui_Screen1.c:15:6:ui_Screen1_screen_init	32	static
+../Drivers/lvgl/ui/screens/ui_Screen1.c:49:6:ui_Screen1_screen_destroy	8	static

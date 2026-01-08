@@ -1,6 +1,0 @@
-../Core/Src/LCDController.c:54:6:lv_port_disp_init	8	static
-../Core/Src/LCDController.c:140:13:disp_init	8	static
-../Core/Src/LCDController.c:149:6:disp_enable_update	4	static
-../Core/Src/LCDController.c:156:6:disp_disable_update	4	static
-../Core/Src/LCDController.c:164:13:disp_flush	32	static
-../Core/Src/LCDController.c:186:6:HAL_SPI_TxCpltCallback	16	static

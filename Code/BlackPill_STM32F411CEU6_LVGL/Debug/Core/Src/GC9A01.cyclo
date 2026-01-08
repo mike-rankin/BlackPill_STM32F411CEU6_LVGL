@@ -1,0 +1,14 @@
+../Core/Src/GC9A01.c:14:13:GC9A01_Select	1
+../Core/Src/GC9A01.c:15:13:GC9A01_Unselect	1
+../Core/Src/GC9A01.c:16:13:GC9A01_DC_Command	1
+../Core/Src/GC9A01.c:17:13:GC9A01_DC_Data	1
+../Core/Src/GC9A01.c:20:6:GC9A01_Reset	1
+../Core/Src/GC9A01.c:29:6:GC9A01_WriteCommand	1
+../Core/Src/GC9A01.c:37:6:GC9A01_WriteData	1
+../Core/Src/GC9A01.c:45:6:GC9A01_WriteDataBuffer	1
+../Core/Src/GC9A01.c:59:6:GC9A01_SetAddressWindow	1
+../Core/Src/GC9A01.c:73:6:GC9A01_DrawPixel	1
+../Core/Src/GC9A01.c:84:6:GC9A01_FillRect	3
+../Core/Src/GC9A01.c:106:6:GC9A01_Flush	1
+../Core/Src/GC9A01.c:135:13:GC9A01_FlushReady	1
+../Core/Src/GC9A01.c:141:6:GC9A01_Init	1

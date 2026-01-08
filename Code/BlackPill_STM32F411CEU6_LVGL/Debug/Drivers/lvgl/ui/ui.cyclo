@@ -1,0 +1,2 @@
+../Drivers/lvgl/ui/ui.c:27:6:ui_init	1
+../Drivers/lvgl/ui/ui.c:38:6:ui_destroy	1
