@@ -1,0 +1,8 @@
+Drivers/lvgl/lvgl/src/stdlib/clib/lv_string_clib.o: \
+ ../Drivers/lvgl/lvgl/src/stdlib/clib/lv_string_clib.c \
+ ../Drivers/lvgl/lvgl/src/stdlib/clib/../../lv_conf_internal.h \
+ ../Drivers/lvgl/lvgl/src/stdlib/clib/../../lv_conf_kconfig.h \
+ C:/Users/mrankin/OneDrive/STM32_Workspace/BlackPill_ST7789V/Drivers/lvgl/lv_conf.h
+../Drivers/lvgl/lvgl/src/stdlib/clib/../../lv_conf_internal.h:
+../Drivers/lvgl/lvgl/src/stdlib/clib/../../lv_conf_kconfig.h:
+C:/Users/mrankin/OneDrive/STM32_Workspace/BlackPill_ST7789V/Drivers/lvgl/lv_conf.h:
