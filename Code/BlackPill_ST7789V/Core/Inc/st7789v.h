@@ -46,132 +46,22 @@ extern SPI_HandleTypeDef ST7789V_SPI_PORT;
 //#define USING_135X240
 //#define USING_240X240
 //#define USING_170X320
-#define USING_240X320
+     //#define USING_240X320
 
 
 /* Choose a display rotation you want to use: (0-3) */
 //#define ST7789V_ROTATION 0
 //#define ST7789V_ROTATION 1
-#define ST7789V_ROTATION 3				
+    //#define ST7789V_ROTATION 3
 //#define ST7789V_ROTATION 3
 
-#ifdef USING_135X240
 
-    #if ST7789V_ROTATION == 0
-        #define ST7789V_WIDTH 135
-        #define ST7789V_HEIGHT 240
-        #define X_SHIFT 53
-        #define Y_SHIFT 40
-    #endif
+#define ST7789V_WIDTH 280
+#define ST7789V_HEIGHT 240
+#define ST7789V_ROTATION 1
+#define X_SHIFT 20       //Was 15
+#define Y_SHIFT 0        //Was 0
 
-    #if ST7789V_ROTATION == 1
-        #define ST7789V_WIDTH 240
-        #define ST7789V_HEIGHT 135
-        #define X_SHIFT 40
-        #define Y_SHIFT 52
-    #endif
-
-    #if ST7789V_ROTATION == 2
-        #define ST7789V_WIDTH 135
-        #define ST7789V_HEIGHT 240
-        #define X_SHIFT 52
-        #define Y_SHIFT 40
-    #endif
-
-    #if ST7789V_ROTATION == 3
-        #define ST7789V_WIDTH 240
-        #define ST7789V_HEIGHT 135
-        #define X_SHIFT 40
-        #define Y_SHIFT 53
-    #endif
-
-#endif
-
-#ifdef USING_240X240
-
-    #define ST7789V_WIDTH 240
-    #define ST7789V_HEIGHT 240
-
-		#if ST7789V_ROTATION == 0
-			#define X_SHIFT 0
-			#define Y_SHIFT 80
-		#elif ST7789V_ROTATION == 1
-			#define X_SHIFT 80
-			#define Y_SHIFT 0
-		#elif ST7789V_ROTATION == 2
-			#define X_SHIFT 0
-			#define Y_SHIFT 0
-		#elif ST7789V_ROTATION == 3
-			#define X_SHIFT 0
-			#define Y_SHIFT 0
-		#endif
-
-#endif
-
-#ifdef USING_170X320
-
-	#if ST7789V_ROTATION == 0
-        #define ST7789V_WIDTH 170
-        #define ST7789V_HEIGHT 320
-        #define X_SHIFT 35
-        #define Y_SHIFT 0
-    #endif
-
-    #if ST7789V_ROTATION == 1
-        #define ST7789V_WIDTH 320
-        #define ST7789V_HEIGHT 170
-        #define X_SHIFT 0
-        #define Y_SHIFT 35
-    #endif
-
-    #if ST7789V_ROTATION == 2
-        #define ST7789V_WIDTH 170
-        #define ST7789V_HEIGHT 320
-        #define X_SHIFT 35
-        #define Y_SHIFT 0
-    #endif
-
-    #if ST7789V_ROTATION == 3
-        #define ST7789V_WIDTH 320
-        #define ST7789V_HEIGHT 170
-        #define X_SHIFT 0
-        #define Y_SHIFT 35
-    #endif
-
-#endif
-
-
-#ifdef USING_240X320
-
-	#if ST7789V_ROTATION == 0
-        #define ST7789V_WIDTH 240
-        #define ST7789V_HEIGHT 320
-        #define X_SHIFT 0
-        #define Y_SHIFT 0
-    #endif
-
-    #if ST7789V_ROTATION == 1
-        #define ST7789V_WIDTH 320
-        #define ST7789V_HEIGHT 240
-        #define X_SHIFT 0
-        #define Y_SHIFT 0
-    #endif
-
-    #if ST7789V_ROTATION == 2
-        #define ST7789V_WIDTH 240
-        #define ST7789V_HEIGHT 320
-        #define X_SHIFT 0
-        #define Y_SHIFT 0
-    #endif
-
-    #if ST7789V_ROTATION == 3
-        #define ST7789V_WIDTH 320
-        #define ST7789V_HEIGHT 240
-        #define X_SHIFT 0
-        #define Y_SHIFT 0
-    #endif
-
-#endif
 
 /**
  *Color of pen
@@ -320,8 +210,8 @@ void ST7789V_Test(void);
 /* Add this with the other function prototypes */
 void ST7789V_Flush(const void *color_map, int32_t x1, int32_t y1, int32_t x2, int32_t y2);
 
-#ifndef ST7789V_ROTATION
-    #error You should at least choose a display rotation!
-#endif
+//#ifndef ST7789V_ROTATION
+//    #error You should at least choose a display rotation!
+//#endif
 
 #endif
