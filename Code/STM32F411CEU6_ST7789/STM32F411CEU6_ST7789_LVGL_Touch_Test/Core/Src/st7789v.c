@@ -261,7 +261,7 @@ void ST7789V_Init(void)
   	ST7789V_WriteCommand (ST7789V_DISPON);	//	Main screen turned on	
 
 	HAL_Delay(50);
-	ST7789V_SetRotation(3);
+	ST7789V_SetRotation(1);   //was 3 but one looks like squareline layout
 	// ST7789V_Fill_Color(BLACK);				//	Fill with Black.
 }
 

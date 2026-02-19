@@ -1,4 +1,3 @@
-
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
@@ -30,8 +29,11 @@
 #include "main.h"
 #include "CST816S.h"
 #include <stdio.h>
+#include <string.h>                 // FIX 1: Added for strlen()
 #include "st7789v.h"
+//#include "lvgl.h"                   // FIX 2: Must come BEFORE lv_port_disp.h
 #include <lv_port_disp.h>
+//#include "ui.h"                     // SquareLine Studio generated UI
 
 
 I2C_HandleTypeDef hi2c1;
@@ -49,19 +51,71 @@ static void MX_SPI1_Init(void);
 static void MX_USART1_UART_Init(void);
 
 
-//Transmit a formatted string over UART1.
+// -- The LVGL input device handle (LVGL v9 style) --
+static lv_indev_t *indev_touchpad;
+
+
+// Transmit a formatted string over UART1.
 static void UART_Print(const char *str)
 {
     HAL_UART_Transmit(&huart1, (uint8_t *)str, (uint16_t)strlen(str), 100);
 }
 
 
-//HAL EXTI callback
+// HAL EXTI callback — fired on C_INT falling edge (touch event)
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     CST816S_EXTI_Callback(&touch, GPIO_Pin);
 }
 
+
+// -------------------------------------------------------
+// LVGL v9 read callback — first arg is (lv_indev_t *), not (lv_indev_drv_t *)
+//
+// CST816S_Handle_t layout (from CST816S.h):
+//   touch.touch.x          — X coordinate     (CST816S_Touch_t nested struct)
+//   touch.touch.y          — Y coordinate
+//   touch.touch.gesture    — CST816S_Gesture_t enum  (GESTURE_NONE = 0x00)
+//   touch.touch.finger_num — 0 = no finger, 1 = finger down
+//   touch.data_ready       — set true by CST816S_EXTI_Callback() on INT pin
+//
+// CST816S_Available() reads I2C, populates touch.touch, clears data_ready,
+// and returns true when a finger is detected — use it as the "is pressed" check.
+// -------------------------------------------------------
+static void my_touchpad_read(lv_indev_t *indev, lv_indev_data_t *data)
+{
+    if (CST816S_Available(&touch))
+    {
+        // Finger is on the screen — report position and pressed state
+        data->state   = LV_INDEV_STATE_PRESSED;
+        //Not right
+        //data->point.x = (lv_coord_t)touch.touch.x;
+        //data->point.y = (lv_coord_t)touch.touch.y;
+
+        // Option A — swap + mirror X (current, for 90° rotation)
+        data->point.x = (lv_coord_t)((280 /*DISPLAY_WIDTH*/ - 1) - touch.touch.y);
+        data->point.y = (lv_coord_t)touch.touch.x;
+
+        // Option B — plain swap, no mirror (try if Option A overshoots)
+        //data->point.x = (lv_coord_t)touch.touch.y;
+        //data->point.y = (lv_coord_t)touch.touch.x;
+
+        // Option C — mirror Y instead (for different rotation)
+        //data->point.x = (lv_coord_t)touch.touch.y;
+        //data->point.y = (lv_coord_t)((240/*DISPLAY_HEIGHT*/ - 1) - touch.touch.x);
+
+        // Debug: print coordinates over UART (remove once working)
+        char buf[56];
+        snprintf(buf, sizeof(buf), "Touch: x=%u  y=%u  gesture=0x%02X\r\n",
+                 touch.touch.x, touch.touch.y, (uint8_t)touch.touch.gesture);
+        UART_Print(buf);
+    }
+    else
+    {
+        // No finger — report last known position with released state
+        data->state = LV_INDEV_STATE_RELEASED;
+    }
+}
 
 
 int main(void)
@@ -91,35 +145,27 @@ int main(void)
   UART_Print("CST816S initialised OK\r\n");
 
 
-
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);  //Backlight on
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);  // Backlight on
 
   lv_init();
   lv_port_disp_init();
 
-  //lv_example_spinner_1();  //Runs LVGL Demo
-  ui_init();  //Runs Squareline generated code from ui folder located in the Drivers/LVGL folder
+  // FIX 5: LVGL v9 input driver registration.
+  //         lv_indev_drv_t / lv_indev_drv_init() / lv_indev_drv_register()
+  //         are all gone in v9. Use lv_indev_create() instead.
+  indev_touchpad = lv_indev_create();
+  lv_indev_set_type(indev_touchpad, LV_INDEV_TYPE_POINTER);
+  lv_indev_set_read_cb(indev_touchpad, my_touchpad_read);
+
+  // Initialise SquareLine Studio generated UI
+  // (make sure ui.h is included in your ui folder and added to include paths)
+  ui_init();
+
 
   while (1)
   {
-
-	if (CST816S_Available(&touch))
-	{
-	 uint16_t x       = touch.touch.x;
-	 uint16_t y       = touch.touch.y;
-
-	 //get_xy.x =  (lv_coord_t )x; //Compile error
-
-	 char msg[80];
-	 snprintf(msg, sizeof(msg), "Touch: x=%u y=%u \r\n", x, y);
-	 UART_Print(msg);
-	}
-
-
-
-	lv_timer_handler();  //has to be added
-	HAL_Delay(5);
-
+      lv_timer_handler();   // drives LVGL rendering + input polling
+      HAL_Delay(5);
   }
 }
 
@@ -131,14 +177,9 @@ void SystemClock_Config(void)
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
-  /** Configure the main internal regulator output voltage
-  */
   __HAL_RCC_PWR_CLK_ENABLE();
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
 
-  /** Initializes the RCC Oscillators according to the specified parameters
-  * in the RCC_OscInitTypeDef structure.
-  */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
@@ -152,8 +193,6 @@ void SystemClock_Config(void)
     Error_Handler();
   }
 
-  /** Initializes the CPU, AHB and APB buses clocks
-  */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
@@ -167,21 +206,8 @@ void SystemClock_Config(void)
   }
 }
 
-/**
-  * @brief I2C1 Initialization Function
-  * @param None
-  * @retval None
-  */
 static void MX_I2C1_Init(void)
 {
-
-  /* USER CODE BEGIN I2C1_Init 0 */
-
-  /* USER CODE END I2C1_Init 0 */
-
-  /* USER CODE BEGIN I2C1_Init 1 */
-
-  /* USER CODE END I2C1_Init 1 */
   hi2c1.Instance = I2C1;
   hi2c1.Init.ClockSpeed = 100000;
   hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
@@ -195,28 +221,10 @@ static void MX_I2C1_Init(void)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN I2C1_Init 2 */
-
-  /* USER CODE END I2C1_Init 2 */
-
 }
 
-/**
-  * @brief SPI1 Initialization Function
-  * @param None
-  * @retval None
-  */
 static void MX_SPI1_Init(void)
 {
-
-  /* USER CODE BEGIN SPI1_Init 0 */
-
-  /* USER CODE END SPI1_Init 0 */
-
-  /* USER CODE BEGIN SPI1_Init 1 */
-
-  /* USER CODE END SPI1_Init 1 */
-  /* SPI1 parameter configuration*/
   hspi1.Instance = SPI1;
   hspi1.Init.Mode = SPI_MODE_MASTER;
   hspi1.Init.Direction = SPI_DIRECTION_1LINE;
@@ -233,27 +241,10 @@ static void MX_SPI1_Init(void)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN SPI1_Init 2 */
-
-  /* USER CODE END SPI1_Init 2 */
-
 }
 
-/**
-  * @brief USART1 Initialization Function
-  * @param None
-  * @retval None
-  */
 static void MX_USART1_UART_Init(void)
 {
-
-  /* USER CODE BEGIN USART1_Init 0 */
-
-  /* USER CODE END USART1_Init 0 */
-
-  /* USER CODE BEGIN USART1_Init 1 */
-
-  /* USER CODE END USART1_Init 1 */
   huart1.Instance = USART1;
   huart1.Init.BaudRate = 115200;
   huart1.Init.WordLength = UART_WORDLENGTH_8B;
@@ -266,117 +257,63 @@ static void MX_USART1_UART_Init(void)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN USART1_Init 2 */
-
-  /* USER CODE END USART1_Init 2 */
-
 }
 
-/**
-  * Enable DMA controller clock
-  */
 static void MX_DMA_Init(void)
 {
-
-  /* DMA controller clock enable */
   __HAL_RCC_DMA2_CLK_ENABLE();
-
-  /* DMA interrupt init */
-  /* DMA2_Stream2_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream2_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream2_IRQn);
-
 }
 
-/**
-  * @brief GPIO Initialization Function
-  * @param None
-  * @retval None
-  */
 static void MX_GPIO_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
-  /* USER CODE BEGIN MX_GPIO_Init_1 */
 
-  /* USER CODE END MX_GPIO_Init_1 */
-
-  /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
-  /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, LED_Pin|RST_Pin|TFT_CS_Pin|DC_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, LCD_BL_Pin|C_RST_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : BUTTON_Pin */
   GPIO_InitStruct.Pin = BUTTON_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(BUTTON_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : LED_Pin RST_Pin TFT_CS_Pin DC_Pin */
   GPIO_InitStruct.Pin = LED_Pin|RST_Pin|TFT_CS_Pin|DC_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : LCD_BL_Pin C_RST_Pin */
   GPIO_InitStruct.Pin = LCD_BL_Pin|C_RST_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : C_INT_Pin */
   GPIO_InitStruct.Pin = C_INT_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(C_INT_GPIO_Port, &GPIO_InitStruct);
 
-  /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
-
-  /* USER CODE BEGIN MX_GPIO_Init_2 */
-
-  /* USER CODE END MX_GPIO_Init_2 */
 }
 
-/* USER CODE BEGIN 4 */
-
-/* USER CODE END 4 */
-
-/**
-  * @brief  This function is executed in case of error occurrence.
-  * @retval None
-  */
 void Error_Handler(void)
 {
-  /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
   __disable_irq();
   while (1)
   {
   }
-  /* USER CODE END Error_Handler_Debug */
 }
+
 #ifdef USE_FULL_ASSERT
-/**
-  * @brief  Reports the name of the source file and the source line number
-  *         where the assert_param error has occurred.
-  * @param  file: pointer to the source file name
-  * @param  line: assert_param error line source number
-  * @retval None
-  */
 void assert_failed(uint8_t *file, uint32_t line)
 {
-  /* USER CODE BEGIN 6 */
-  /* User can add his own implementation to report the file name and line number,
-     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
-  /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+

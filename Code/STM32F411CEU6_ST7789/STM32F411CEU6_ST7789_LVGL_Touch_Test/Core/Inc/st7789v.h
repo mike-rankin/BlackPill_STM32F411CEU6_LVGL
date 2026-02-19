@@ -58,9 +58,9 @@ extern SPI_HandleTypeDef ST7789V_SPI_PORT;
 
 #define ST7789V_WIDTH 280
 #define ST7789V_HEIGHT 240
-#define ST7789V_ROTATION 1
-#define X_SHIFT 20       //Was 15
-#define Y_SHIFT 0        //Was 0
+#define ST7789V_ROTATION 1  //This is not used with Rotation being set in st7789v.c instead
+#define X_SHIFT 20          //Was 15
+#define Y_SHIFT 0           //Was 0
 
 
 /**
