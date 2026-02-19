@@ -412,7 +412,7 @@ Drivers/lvgl/ui/ui_helpers.o: ../Drivers/lvgl/ui/ui_helpers.c \
  C:/Users/mrankin/OneDrive/STM32_Workspace/STM32F411CEU6_ST7789/STM32F411CEU6_ST7789_LVGL_Touch_Test/Drivers/lvgl/lvgl/src/lv_api_map_v8.h \
  C:/Users/mrankin/OneDrive/STM32_Workspace/STM32F411CEU6_ST7789/STM32F411CEU6_ST7789_LVGL_Touch_Test/Drivers/lvgl/lvgl/src/lv_api_map_v9_0.h \
  C:/Users/mrankin/OneDrive/STM32_Workspace/STM32F411CEU6_ST7789/STM32F411CEU6_ST7789_LVGL_Touch_Test/Drivers/lvgl/lvgl/src/lv_api_map_v9_1.h \
- ../Drivers/lvgl/ui/ui_events.h
+ ../Drivers/lvgl/ui/ui_events.h ../Drivers/lvgl/ui/screens/ui_Screen1.h
 ../Drivers/lvgl/ui/ui_helpers.h:
 ../Drivers/lvgl/ui/ui.h:
 C:/Users/mrankin/OneDrive/STM32_Workspace/STM32F411CEU6_ST7789/STM32F411CEU6_ST7789_LVGL_Touch_Test/Drivers/lvgl/lvgl/lvgl.h:
@@ -828,3 +828,4 @@ C:/Users/mrankin/OneDrive/STM32_Workspace/STM32F411CEU6_ST7789/STM32F411CEU6_ST7
 C:/Users/mrankin/OneDrive/STM32_Workspace/STM32F411CEU6_ST7789/STM32F411CEU6_ST7789_LVGL_Touch_Test/Drivers/lvgl/lvgl/src/lv_api_map_v9_0.h:
 C:/Users/mrankin/OneDrive/STM32_Workspace/STM32F411CEU6_ST7789/STM32F411CEU6_ST7789_LVGL_Touch_Test/Drivers/lvgl/lvgl/src/lv_api_map_v9_1.h:
 ../Drivers/lvgl/ui/ui_events.h:
+../Drivers/lvgl/ui/screens/ui_Screen1.h:

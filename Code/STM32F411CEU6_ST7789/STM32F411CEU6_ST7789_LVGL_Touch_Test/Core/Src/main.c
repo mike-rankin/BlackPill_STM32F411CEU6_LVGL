@@ -97,8 +97,8 @@ int main(void)
   lv_init();
   lv_port_disp_init();
 
-  lv_example_spinner_1();  //Runs LVGL Demo
-  //ui_init();  //Runs Squareline generated code from ui folder located in the Drivers/LVGL folder
+  //lv_example_spinner_1();  //Runs LVGL Demo
+  ui_init();  //Runs Squareline generated code from ui folder located in the Drivers/LVGL folder
 
   while (1)
   {
@@ -107,6 +107,8 @@ int main(void)
 	{
 	 uint16_t x       = touch.touch.x;
 	 uint16_t y       = touch.touch.y;
+
+	 //get_xy.x =  (lv_coord_t )x; //Compile error
 
 	 char msg[80];
 	 snprintf(msg, sizeof(msg), "Touch: x=%u y=%u \r\n", x, y);
