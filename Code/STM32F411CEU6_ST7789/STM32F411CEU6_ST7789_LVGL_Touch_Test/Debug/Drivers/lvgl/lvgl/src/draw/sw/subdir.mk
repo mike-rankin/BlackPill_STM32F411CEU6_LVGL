@@ -7,50 +7,44 @@
 C_SRCS += \
 ../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw.c \
 ../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_arc.c \
-../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_border.c \
-../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_box_shadow.c \
-../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_fill.c \
+../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_blend.c \
+../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_dither.c \
 ../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_gradient.c \
 ../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_img.c \
+../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_layer.c \
 ../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_letter.c \
 ../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_line.c \
-../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_mask.c \
-../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c \
-../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_transform.c \
-../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_triangle.c \
-../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_vector.c 
+../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_polygon.c \
+../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_rect.c \
+../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_transform.c 
 
 OBJS += \
 ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw.o \
 ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_arc.o \
-./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_border.o \
-./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_box_shadow.o \
-./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_fill.o \
+./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_blend.o \
+./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_dither.o \
 ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_gradient.o \
 ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_img.o \
+./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_layer.o \
 ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_letter.o \
 ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_line.o \
-./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_mask.o \
-./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_mask_rect.o \
-./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_transform.o \
-./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_triangle.o \
-./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_vector.o 
+./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_polygon.o \
+./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_rect.o \
+./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_transform.o 
 
 C_DEPS += \
 ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw.d \
 ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_arc.d \
-./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_border.d \
-./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_box_shadow.d \
-./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_fill.d \
+./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_blend.d \
+./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_dither.d \
 ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_gradient.d \
 ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_img.d \
+./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_layer.d \
 ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_letter.d \
 ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_line.d \
-./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_mask.d \
-./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_mask_rect.d \
-./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_transform.d \
-./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_triangle.d \
-./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_vector.d 
+./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_polygon.d \
+./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_rect.d \
+./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_transform.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -60,7 +54,7 @@ Drivers/lvgl/lvgl/src/draw/sw/%.o Drivers/lvgl/lvgl/src/draw/sw/%.su Drivers/lvg
 clean: clean-Drivers-2f-lvgl-2f-lvgl-2f-src-2f-draw-2f-sw
 
 clean-Drivers-2f-lvgl-2f-lvgl-2f-src-2f-draw-2f-sw:
-	-$(RM) ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_arc.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_arc.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_arc.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_arc.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_border.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_border.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_border.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_border.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_box_shadow.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_box_shadow.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_box_shadow.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_box_shadow.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_fill.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_fill.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_fill.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_fill.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_gradient.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_gradient.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_gradient.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_gradient.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_img.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_img.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_img.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_img.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_letter.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_letter.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_letter.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_letter.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_line.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_line.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_line.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_line.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_mask.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_mask.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_mask.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_mask.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_mask_rect.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_mask_rect.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_mask_rect.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_mask_rect.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_transform.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_transform.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_transform.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_transform.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_triangle.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_triangle.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_triangle.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_triangle.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_vector.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_vector.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_vector.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_vector.su
+	-$(RM) ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_arc.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_arc.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_arc.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_arc.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_blend.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_blend.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_blend.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_blend.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_dither.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_dither.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_dither.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_dither.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_gradient.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_gradient.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_gradient.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_gradient.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_img.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_img.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_img.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_img.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_layer.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_layer.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_layer.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_layer.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_letter.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_letter.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_letter.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_letter.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_line.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_line.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_line.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_line.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_polygon.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_polygon.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_polygon.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_polygon.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_rect.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_rect.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_rect.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_rect.su ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_transform.cyclo ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_transform.d ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_transform.o ./Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_transform.su
 
 .PHONY: clean-Drivers-2f-lvgl-2f-lvgl-2f-src-2f-draw-2f-sw
 

@@ -8,81 +8,72 @@ C_SRCS += \
 ../Drivers/lvgl/lvgl/src/misc/lv_anim.c \
 ../Drivers/lvgl/lvgl/src/misc/lv_anim_timeline.c \
 ../Drivers/lvgl/lvgl/src/misc/lv_area.c \
-../Drivers/lvgl/lvgl/src/misc/lv_array.c \
 ../Drivers/lvgl/lvgl/src/misc/lv_async.c \
 ../Drivers/lvgl/lvgl/src/misc/lv_bidi.c \
 ../Drivers/lvgl/lvgl/src/misc/lv_color.c \
-../Drivers/lvgl/lvgl/src/misc/lv_color_op.c \
-../Drivers/lvgl/lvgl/src/misc/lv_event.c \
 ../Drivers/lvgl/lvgl/src/misc/lv_fs.c \
+../Drivers/lvgl/lvgl/src/misc/lv_gc.c \
 ../Drivers/lvgl/lvgl/src/misc/lv_ll.c \
 ../Drivers/lvgl/lvgl/src/misc/lv_log.c \
 ../Drivers/lvgl/lvgl/src/misc/lv_lru.c \
 ../Drivers/lvgl/lvgl/src/misc/lv_math.c \
-../Drivers/lvgl/lvgl/src/misc/lv_matrix.c \
-../Drivers/lvgl/lvgl/src/misc/lv_palette.c \
-../Drivers/lvgl/lvgl/src/misc/lv_profiler_builtin.c \
-../Drivers/lvgl/lvgl/src/misc/lv_rb.c \
+../Drivers/lvgl/lvgl/src/misc/lv_mem.c \
+../Drivers/lvgl/lvgl/src/misc/lv_printf.c \
 ../Drivers/lvgl/lvgl/src/misc/lv_style.c \
 ../Drivers/lvgl/lvgl/src/misc/lv_style_gen.c \
 ../Drivers/lvgl/lvgl/src/misc/lv_templ.c \
-../Drivers/lvgl/lvgl/src/misc/lv_text.c \
-../Drivers/lvgl/lvgl/src/misc/lv_text_ap.c \
 ../Drivers/lvgl/lvgl/src/misc/lv_timer.c \
+../Drivers/lvgl/lvgl/src/misc/lv_tlsf.c \
+../Drivers/lvgl/lvgl/src/misc/lv_txt.c \
+../Drivers/lvgl/lvgl/src/misc/lv_txt_ap.c \
 ../Drivers/lvgl/lvgl/src/misc/lv_utils.c 
 
 OBJS += \
 ./Drivers/lvgl/lvgl/src/misc/lv_anim.o \
 ./Drivers/lvgl/lvgl/src/misc/lv_anim_timeline.o \
 ./Drivers/lvgl/lvgl/src/misc/lv_area.o \
-./Drivers/lvgl/lvgl/src/misc/lv_array.o \
 ./Drivers/lvgl/lvgl/src/misc/lv_async.o \
 ./Drivers/lvgl/lvgl/src/misc/lv_bidi.o \
 ./Drivers/lvgl/lvgl/src/misc/lv_color.o \
-./Drivers/lvgl/lvgl/src/misc/lv_color_op.o \
-./Drivers/lvgl/lvgl/src/misc/lv_event.o \
 ./Drivers/lvgl/lvgl/src/misc/lv_fs.o \
+./Drivers/lvgl/lvgl/src/misc/lv_gc.o \
 ./Drivers/lvgl/lvgl/src/misc/lv_ll.o \
 ./Drivers/lvgl/lvgl/src/misc/lv_log.o \
 ./Drivers/lvgl/lvgl/src/misc/lv_lru.o \
 ./Drivers/lvgl/lvgl/src/misc/lv_math.o \
-./Drivers/lvgl/lvgl/src/misc/lv_matrix.o \
-./Drivers/lvgl/lvgl/src/misc/lv_palette.o \
-./Drivers/lvgl/lvgl/src/misc/lv_profiler_builtin.o \
-./Drivers/lvgl/lvgl/src/misc/lv_rb.o \
+./Drivers/lvgl/lvgl/src/misc/lv_mem.o \
+./Drivers/lvgl/lvgl/src/misc/lv_printf.o \
 ./Drivers/lvgl/lvgl/src/misc/lv_style.o \
 ./Drivers/lvgl/lvgl/src/misc/lv_style_gen.o \
 ./Drivers/lvgl/lvgl/src/misc/lv_templ.o \
-./Drivers/lvgl/lvgl/src/misc/lv_text.o \
-./Drivers/lvgl/lvgl/src/misc/lv_text_ap.o \
 ./Drivers/lvgl/lvgl/src/misc/lv_timer.o \
+./Drivers/lvgl/lvgl/src/misc/lv_tlsf.o \
+./Drivers/lvgl/lvgl/src/misc/lv_txt.o \
+./Drivers/lvgl/lvgl/src/misc/lv_txt_ap.o \
 ./Drivers/lvgl/lvgl/src/misc/lv_utils.o 
 
 C_DEPS += \
 ./Drivers/lvgl/lvgl/src/misc/lv_anim.d \
 ./Drivers/lvgl/lvgl/src/misc/lv_anim_timeline.d \
 ./Drivers/lvgl/lvgl/src/misc/lv_area.d \
-./Drivers/lvgl/lvgl/src/misc/lv_array.d \
 ./Drivers/lvgl/lvgl/src/misc/lv_async.d \
 ./Drivers/lvgl/lvgl/src/misc/lv_bidi.d \
 ./Drivers/lvgl/lvgl/src/misc/lv_color.d \
-./Drivers/lvgl/lvgl/src/misc/lv_color_op.d \
-./Drivers/lvgl/lvgl/src/misc/lv_event.d \
 ./Drivers/lvgl/lvgl/src/misc/lv_fs.d \
+./Drivers/lvgl/lvgl/src/misc/lv_gc.d \
 ./Drivers/lvgl/lvgl/src/misc/lv_ll.d \
 ./Drivers/lvgl/lvgl/src/misc/lv_log.d \
 ./Drivers/lvgl/lvgl/src/misc/lv_lru.d \
 ./Drivers/lvgl/lvgl/src/misc/lv_math.d \
-./Drivers/lvgl/lvgl/src/misc/lv_matrix.d \
-./Drivers/lvgl/lvgl/src/misc/lv_palette.d \
-./Drivers/lvgl/lvgl/src/misc/lv_profiler_builtin.d \
-./Drivers/lvgl/lvgl/src/misc/lv_rb.d \
+./Drivers/lvgl/lvgl/src/misc/lv_mem.d \
+./Drivers/lvgl/lvgl/src/misc/lv_printf.d \
 ./Drivers/lvgl/lvgl/src/misc/lv_style.d \
 ./Drivers/lvgl/lvgl/src/misc/lv_style_gen.d \
 ./Drivers/lvgl/lvgl/src/misc/lv_templ.d \
-./Drivers/lvgl/lvgl/src/misc/lv_text.d \
-./Drivers/lvgl/lvgl/src/misc/lv_text_ap.d \
 ./Drivers/lvgl/lvgl/src/misc/lv_timer.d \
+./Drivers/lvgl/lvgl/src/misc/lv_tlsf.d \
+./Drivers/lvgl/lvgl/src/misc/lv_txt.d \
+./Drivers/lvgl/lvgl/src/misc/lv_txt_ap.d \
 ./Drivers/lvgl/lvgl/src/misc/lv_utils.d 
 
 
@@ -93,7 +84,7 @@ Drivers/lvgl/lvgl/src/misc/%.o Drivers/lvgl/lvgl/src/misc/%.su Drivers/lvgl/lvgl
 clean: clean-Drivers-2f-lvgl-2f-lvgl-2f-src-2f-misc
 
 clean-Drivers-2f-lvgl-2f-lvgl-2f-src-2f-misc:
-	-$(RM) ./Drivers/lvgl/lvgl/src/misc/lv_anim.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_anim.d ./Drivers/lvgl/lvgl/src/misc/lv_anim.o ./Drivers/lvgl/lvgl/src/misc/lv_anim.su ./Drivers/lvgl/lvgl/src/misc/lv_anim_timeline.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_anim_timeline.d ./Drivers/lvgl/lvgl/src/misc/lv_anim_timeline.o ./Drivers/lvgl/lvgl/src/misc/lv_anim_timeline.su ./Drivers/lvgl/lvgl/src/misc/lv_area.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_area.d ./Drivers/lvgl/lvgl/src/misc/lv_area.o ./Drivers/lvgl/lvgl/src/misc/lv_area.su ./Drivers/lvgl/lvgl/src/misc/lv_array.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_array.d ./Drivers/lvgl/lvgl/src/misc/lv_array.o ./Drivers/lvgl/lvgl/src/misc/lv_array.su ./Drivers/lvgl/lvgl/src/misc/lv_async.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_async.d ./Drivers/lvgl/lvgl/src/misc/lv_async.o ./Drivers/lvgl/lvgl/src/misc/lv_async.su ./Drivers/lvgl/lvgl/src/misc/lv_bidi.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_bidi.d ./Drivers/lvgl/lvgl/src/misc/lv_bidi.o ./Drivers/lvgl/lvgl/src/misc/lv_bidi.su ./Drivers/lvgl/lvgl/src/misc/lv_color.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_color.d ./Drivers/lvgl/lvgl/src/misc/lv_color.o ./Drivers/lvgl/lvgl/src/misc/lv_color.su ./Drivers/lvgl/lvgl/src/misc/lv_color_op.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_color_op.d ./Drivers/lvgl/lvgl/src/misc/lv_color_op.o ./Drivers/lvgl/lvgl/src/misc/lv_color_op.su ./Drivers/lvgl/lvgl/src/misc/lv_event.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_event.d ./Drivers/lvgl/lvgl/src/misc/lv_event.o ./Drivers/lvgl/lvgl/src/misc/lv_event.su ./Drivers/lvgl/lvgl/src/misc/lv_fs.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_fs.d ./Drivers/lvgl/lvgl/src/misc/lv_fs.o ./Drivers/lvgl/lvgl/src/misc/lv_fs.su ./Drivers/lvgl/lvgl/src/misc/lv_ll.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_ll.d ./Drivers/lvgl/lvgl/src/misc/lv_ll.o ./Drivers/lvgl/lvgl/src/misc/lv_ll.su ./Drivers/lvgl/lvgl/src/misc/lv_log.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_log.d ./Drivers/lvgl/lvgl/src/misc/lv_log.o ./Drivers/lvgl/lvgl/src/misc/lv_log.su ./Drivers/lvgl/lvgl/src/misc/lv_lru.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_lru.d ./Drivers/lvgl/lvgl/src/misc/lv_lru.o ./Drivers/lvgl/lvgl/src/misc/lv_lru.su ./Drivers/lvgl/lvgl/src/misc/lv_math.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_math.d ./Drivers/lvgl/lvgl/src/misc/lv_math.o ./Drivers/lvgl/lvgl/src/misc/lv_math.su ./Drivers/lvgl/lvgl/src/misc/lv_matrix.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_matrix.d ./Drivers/lvgl/lvgl/src/misc/lv_matrix.o ./Drivers/lvgl/lvgl/src/misc/lv_matrix.su ./Drivers/lvgl/lvgl/src/misc/lv_palette.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_palette.d ./Drivers/lvgl/lvgl/src/misc/lv_palette.o ./Drivers/lvgl/lvgl/src/misc/lv_palette.su ./Drivers/lvgl/lvgl/src/misc/lv_profiler_builtin.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_profiler_builtin.d ./Drivers/lvgl/lvgl/src/misc/lv_profiler_builtin.o ./Drivers/lvgl/lvgl/src/misc/lv_profiler_builtin.su ./Drivers/lvgl/lvgl/src/misc/lv_rb.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_rb.d ./Drivers/lvgl/lvgl/src/misc/lv_rb.o ./Drivers/lvgl/lvgl/src/misc/lv_rb.su ./Drivers/lvgl/lvgl/src/misc/lv_style.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_style.d ./Drivers/lvgl/lvgl/src/misc/lv_style.o ./Drivers/lvgl/lvgl/src/misc/lv_style.su ./Drivers/lvgl/lvgl/src/misc/lv_style_gen.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_style_gen.d ./Drivers/lvgl/lvgl/src/misc/lv_style_gen.o ./Drivers/lvgl/lvgl/src/misc/lv_style_gen.su ./Drivers/lvgl/lvgl/src/misc/lv_templ.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_templ.d ./Drivers/lvgl/lvgl/src/misc/lv_templ.o ./Drivers/lvgl/lvgl/src/misc/lv_templ.su ./Drivers/lvgl/lvgl/src/misc/lv_text.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_text.d ./Drivers/lvgl/lvgl/src/misc/lv_text.o ./Drivers/lvgl/lvgl/src/misc/lv_text.su ./Drivers/lvgl/lvgl/src/misc/lv_text_ap.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_text_ap.d ./Drivers/lvgl/lvgl/src/misc/lv_text_ap.o ./Drivers/lvgl/lvgl/src/misc/lv_text_ap.su ./Drivers/lvgl/lvgl/src/misc/lv_timer.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_timer.d ./Drivers/lvgl/lvgl/src/misc/lv_timer.o ./Drivers/lvgl/lvgl/src/misc/lv_timer.su ./Drivers/lvgl/lvgl/src/misc/lv_utils.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_utils.d ./Drivers/lvgl/lvgl/src/misc/lv_utils.o ./Drivers/lvgl/lvgl/src/misc/lv_utils.su
+	-$(RM) ./Drivers/lvgl/lvgl/src/misc/lv_anim.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_anim.d ./Drivers/lvgl/lvgl/src/misc/lv_anim.o ./Drivers/lvgl/lvgl/src/misc/lv_anim.su ./Drivers/lvgl/lvgl/src/misc/lv_anim_timeline.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_anim_timeline.d ./Drivers/lvgl/lvgl/src/misc/lv_anim_timeline.o ./Drivers/lvgl/lvgl/src/misc/lv_anim_timeline.su ./Drivers/lvgl/lvgl/src/misc/lv_area.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_area.d ./Drivers/lvgl/lvgl/src/misc/lv_area.o ./Drivers/lvgl/lvgl/src/misc/lv_area.su ./Drivers/lvgl/lvgl/src/misc/lv_async.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_async.d ./Drivers/lvgl/lvgl/src/misc/lv_async.o ./Drivers/lvgl/lvgl/src/misc/lv_async.su ./Drivers/lvgl/lvgl/src/misc/lv_bidi.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_bidi.d ./Drivers/lvgl/lvgl/src/misc/lv_bidi.o ./Drivers/lvgl/lvgl/src/misc/lv_bidi.su ./Drivers/lvgl/lvgl/src/misc/lv_color.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_color.d ./Drivers/lvgl/lvgl/src/misc/lv_color.o ./Drivers/lvgl/lvgl/src/misc/lv_color.su ./Drivers/lvgl/lvgl/src/misc/lv_fs.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_fs.d ./Drivers/lvgl/lvgl/src/misc/lv_fs.o ./Drivers/lvgl/lvgl/src/misc/lv_fs.su ./Drivers/lvgl/lvgl/src/misc/lv_gc.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_gc.d ./Drivers/lvgl/lvgl/src/misc/lv_gc.o ./Drivers/lvgl/lvgl/src/misc/lv_gc.su ./Drivers/lvgl/lvgl/src/misc/lv_ll.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_ll.d ./Drivers/lvgl/lvgl/src/misc/lv_ll.o ./Drivers/lvgl/lvgl/src/misc/lv_ll.su ./Drivers/lvgl/lvgl/src/misc/lv_log.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_log.d ./Drivers/lvgl/lvgl/src/misc/lv_log.o ./Drivers/lvgl/lvgl/src/misc/lv_log.su ./Drivers/lvgl/lvgl/src/misc/lv_lru.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_lru.d ./Drivers/lvgl/lvgl/src/misc/lv_lru.o ./Drivers/lvgl/lvgl/src/misc/lv_lru.su ./Drivers/lvgl/lvgl/src/misc/lv_math.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_math.d ./Drivers/lvgl/lvgl/src/misc/lv_math.o ./Drivers/lvgl/lvgl/src/misc/lv_math.su ./Drivers/lvgl/lvgl/src/misc/lv_mem.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_mem.d ./Drivers/lvgl/lvgl/src/misc/lv_mem.o ./Drivers/lvgl/lvgl/src/misc/lv_mem.su ./Drivers/lvgl/lvgl/src/misc/lv_printf.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_printf.d ./Drivers/lvgl/lvgl/src/misc/lv_printf.o ./Drivers/lvgl/lvgl/src/misc/lv_printf.su ./Drivers/lvgl/lvgl/src/misc/lv_style.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_style.d ./Drivers/lvgl/lvgl/src/misc/lv_style.o ./Drivers/lvgl/lvgl/src/misc/lv_style.su ./Drivers/lvgl/lvgl/src/misc/lv_style_gen.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_style_gen.d ./Drivers/lvgl/lvgl/src/misc/lv_style_gen.o ./Drivers/lvgl/lvgl/src/misc/lv_style_gen.su ./Drivers/lvgl/lvgl/src/misc/lv_templ.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_templ.d ./Drivers/lvgl/lvgl/src/misc/lv_templ.o ./Drivers/lvgl/lvgl/src/misc/lv_templ.su ./Drivers/lvgl/lvgl/src/misc/lv_timer.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_timer.d ./Drivers/lvgl/lvgl/src/misc/lv_timer.o ./Drivers/lvgl/lvgl/src/misc/lv_timer.su ./Drivers/lvgl/lvgl/src/misc/lv_tlsf.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_tlsf.d ./Drivers/lvgl/lvgl/src/misc/lv_tlsf.o ./Drivers/lvgl/lvgl/src/misc/lv_tlsf.su ./Drivers/lvgl/lvgl/src/misc/lv_txt.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_txt.d ./Drivers/lvgl/lvgl/src/misc/lv_txt.o ./Drivers/lvgl/lvgl/src/misc/lv_txt.su ./Drivers/lvgl/lvgl/src/misc/lv_txt_ap.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_txt_ap.d ./Drivers/lvgl/lvgl/src/misc/lv_txt_ap.o ./Drivers/lvgl/lvgl/src/misc/lv_txt_ap.su ./Drivers/lvgl/lvgl/src/misc/lv_utils.cyclo ./Drivers/lvgl/lvgl/src/misc/lv_utils.d ./Drivers/lvgl/lvgl/src/misc/lv_utils.o ./Drivers/lvgl/lvgl/src/misc/lv_utils.su
 
 .PHONY: clean-Drivers-2f-lvgl-2f-lvgl-2f-src-2f-misc
 

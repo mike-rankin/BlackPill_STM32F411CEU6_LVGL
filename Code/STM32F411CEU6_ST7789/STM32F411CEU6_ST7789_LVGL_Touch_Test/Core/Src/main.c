@@ -52,7 +52,8 @@ static void MX_USART1_UART_Init(void);
 
 
 // -- The LVGL input device handle (LVGL v9 style) --
-static lv_indev_t *indev_touchpad;
+//static lv_indev_t *indev_touchpad;
+  static lv_indev_drv_t indev_drv;
 
 
 // Transmit a formatted string over UART1.
@@ -82,7 +83,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 // CST816S_Available() reads I2C, populates touch.touch, clears data_ready,
 // and returns true when a finger is detected — use it as the "is pressed" check.
 // -------------------------------------------------------
-static void my_touchpad_read(lv_indev_t *indev, lv_indev_data_t *data)
+//static void my_touchpad_read(lv_indev_t *indev, lv_indev_data_t *data)
+static void my_touchpad_read(lv_indev_drv_t *indev_drv, lv_indev_data_t *data)
 {
     if (CST816S_Available(&touch))
     {
@@ -153,9 +155,14 @@ int main(void)
   // FIX 5: LVGL v9 input driver registration.
   //         lv_indev_drv_t / lv_indev_drv_init() / lv_indev_drv_register()
   //         are all gone in v9. Use lv_indev_create() instead.
-  indev_touchpad = lv_indev_create();
-  lv_indev_set_type(indev_touchpad, LV_INDEV_TYPE_POINTER);
-  lv_indev_set_read_cb(indev_touchpad, my_touchpad_read);
+     //indev_touchpad = lv_indev_create();
+     //lv_indev_set_type(indev_touchpad, LV_INDEV_TYPE_POINTER);
+     //lv_indev_set_read_cb(indev_touchpad, my_touchpad_read);
+
+       lv_indev_drv_init(&indev_drv);
+       indev_drv.type    = LV_INDEV_TYPE_POINTER;
+       indev_drv.read_cb = my_touchpad_read;
+       lv_indev_drv_register(&indev_drv);
 
   // Initialise SquareLine Studio generated UI
   // (make sure ui.h is included in your ui folder and added to include paths)

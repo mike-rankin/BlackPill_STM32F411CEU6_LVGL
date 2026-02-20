@@ -1,4 +1,6 @@
-C:/Users/mrankin/OneDrive/STM32_Workspace/STM32F411CEU6_ST7789/STM32F411CEU6_ST7789_LVGL_Touch_Test/Drivers/lvgl/lvgl/src/core/lv_obj_style_gen.h:586:24:lv_obj_get_style_opa	1
+C:/Users/mrankin/OneDrive/STM32_Workspace/STM32F411CEU6_ST7789/STM32F411CEU6_ST7789_LVGL_Touch_Test/Drivers/lvgl/lvgl/src/core/lv_obj_style_gen.h:505:24:lv_obj_get_style_opa	1
+C:/Users/mrankin/OneDrive/STM32_Workspace/STM32F411CEU6_ST7789/STM32F411CEU6_ST7789_LVGL_Touch_Test/Drivers/lvgl/lvgl/src/widgets/lv_slider.h:84:20:lv_slider_set_value	1
+C:/Users/mrankin/OneDrive/STM32_Workspace/STM32F411CEU6_ST7789/STM32F411CEU6_ST7789_LVGL_Touch_Test/Drivers/lvgl/lvgl/src/widgets/lv_slider.h:130:23:lv_slider_get_value	1
 ../Drivers/lvgl/ui/ui_helpers.c:8:6:_ui_bar_set_property	3
 ../Drivers/lvgl/ui/ui_helpers.c:14:6:_ui_basic_set_property	5
 ../Drivers/lvgl/ui/ui_helpers.c:23:6:_ui_dropdown_set_property	2

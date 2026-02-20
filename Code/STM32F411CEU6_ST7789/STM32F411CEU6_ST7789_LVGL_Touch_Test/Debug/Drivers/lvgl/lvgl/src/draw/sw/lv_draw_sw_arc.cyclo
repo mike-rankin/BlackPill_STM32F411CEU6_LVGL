@@ -1,5 +1,9 @@
-../Drivers/lvgl/lvgl/src/draw/sw/../../misc/lv_area.h:107:20:lv_area_copy	1
-../Drivers/lvgl/lvgl/src/draw/sw/../../misc/../stdlib/lv_string.h:73:20:lv_memzero	1
-../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_arc.c:53:6:lv_draw_sw_arc	35
-../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_arc.c:249:13:add_circle	3
-../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_arc.c:269:13:get_rounded_area	3
+../Drivers/lvgl/lvgl/src/draw/sw/../../misc/lv_area.h:110:20:lv_area_copy	1
+../Drivers/lvgl/lvgl/src/draw/sw/../../misc/lv_area.h:123:26:lv_area_get_width	1
+../Drivers/lvgl/lvgl/src/draw/sw/../../misc/lv_area.h:133:26:lv_area_get_height	1
+../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_arc.c:60:6:lv_draw_sw_arc	22
+../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_arc.c:230:13:draw_quarter_0	21
+../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_arc.c:297:13:draw_quarter_1	21
+../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_arc.c:364:13:draw_quarter_2	21
+../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_arc.c:431:13:draw_quarter_3	21
+../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_arc.c:499:13:get_rounded_area	3

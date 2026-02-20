@@ -1,5 +1,8 @@
-../Drivers/lvgl/lvgl/src/draw/sw/../../misc/lv_area.h:107:20:lv_area_copy	1
-../Drivers/lvgl/lvgl/src/draw/sw/blend/../../../misc/../stdlib/lv_string.h:73:20:lv_memzero	1
-../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_img.c:75:6:lv_draw_sw_layer	2
-../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_img.c:167:6:lv_draw_sw_image	2
-../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_img.c:182:13:img_draw_core	55
+../Drivers/lvgl/lvgl/src/draw/sw/../../misc/lv_color.h:475:42:lv_color_premult	1
+../Drivers/lvgl/lvgl/src/draw/sw/../../misc/lv_color.h:500:48:lv_color_mix_premult	1
+../Drivers/lvgl/lvgl/src/draw/sw/../../misc/lv_color.h:600:26:lv_color_hex	1
+../Drivers/lvgl/lvgl/src/draw/sw/../../misc/lv_area.h:110:20:lv_area_copy	1
+../Drivers/lvgl/lvgl/src/draw/sw/../../misc/lv_area.h:123:26:lv_area_get_width	1
+../Drivers/lvgl/lvgl/src/draw/sw/../../misc/lv_area.h:133:26:lv_area_get_height	1
+../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_img.c:45:28:lv_draw_sw_img_decoded	28
+../Drivers/lvgl/lvgl/src/draw/sw/lv_draw_sw_img.c:204:13:convert_cb	13

@@ -5,49 +5,55 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Drivers/lvgl/lvgl/src/core/lv_disp.c \
+../Drivers/lvgl/lvgl/src/core/lv_event.c \
 ../Drivers/lvgl/lvgl/src/core/lv_group.c \
+../Drivers/lvgl/lvgl/src/core/lv_indev.c \
+../Drivers/lvgl/lvgl/src/core/lv_indev_scroll.c \
 ../Drivers/lvgl/lvgl/src/core/lv_obj.c \
 ../Drivers/lvgl/lvgl/src/core/lv_obj_class.c \
 ../Drivers/lvgl/lvgl/src/core/lv_obj_draw.c \
-../Drivers/lvgl/lvgl/src/core/lv_obj_event.c \
-../Drivers/lvgl/lvgl/src/core/lv_obj_id_builtin.c \
 ../Drivers/lvgl/lvgl/src/core/lv_obj_pos.c \
-../Drivers/lvgl/lvgl/src/core/lv_obj_property.c \
 ../Drivers/lvgl/lvgl/src/core/lv_obj_scroll.c \
 ../Drivers/lvgl/lvgl/src/core/lv_obj_style.c \
 ../Drivers/lvgl/lvgl/src/core/lv_obj_style_gen.c \
 ../Drivers/lvgl/lvgl/src/core/lv_obj_tree.c \
-../Drivers/lvgl/lvgl/src/core/lv_refr.c 
+../Drivers/lvgl/lvgl/src/core/lv_refr.c \
+../Drivers/lvgl/lvgl/src/core/lv_theme.c 
 
 OBJS += \
+./Drivers/lvgl/lvgl/src/core/lv_disp.o \
+./Drivers/lvgl/lvgl/src/core/lv_event.o \
 ./Drivers/lvgl/lvgl/src/core/lv_group.o \
+./Drivers/lvgl/lvgl/src/core/lv_indev.o \
+./Drivers/lvgl/lvgl/src/core/lv_indev_scroll.o \
 ./Drivers/lvgl/lvgl/src/core/lv_obj.o \
 ./Drivers/lvgl/lvgl/src/core/lv_obj_class.o \
 ./Drivers/lvgl/lvgl/src/core/lv_obj_draw.o \
-./Drivers/lvgl/lvgl/src/core/lv_obj_event.o \
-./Drivers/lvgl/lvgl/src/core/lv_obj_id_builtin.o \
 ./Drivers/lvgl/lvgl/src/core/lv_obj_pos.o \
-./Drivers/lvgl/lvgl/src/core/lv_obj_property.o \
 ./Drivers/lvgl/lvgl/src/core/lv_obj_scroll.o \
 ./Drivers/lvgl/lvgl/src/core/lv_obj_style.o \
 ./Drivers/lvgl/lvgl/src/core/lv_obj_style_gen.o \
 ./Drivers/lvgl/lvgl/src/core/lv_obj_tree.o \
-./Drivers/lvgl/lvgl/src/core/lv_refr.o 
+./Drivers/lvgl/lvgl/src/core/lv_refr.o \
+./Drivers/lvgl/lvgl/src/core/lv_theme.o 
 
 C_DEPS += \
+./Drivers/lvgl/lvgl/src/core/lv_disp.d \
+./Drivers/lvgl/lvgl/src/core/lv_event.d \
 ./Drivers/lvgl/lvgl/src/core/lv_group.d \
+./Drivers/lvgl/lvgl/src/core/lv_indev.d \
+./Drivers/lvgl/lvgl/src/core/lv_indev_scroll.d \
 ./Drivers/lvgl/lvgl/src/core/lv_obj.d \
 ./Drivers/lvgl/lvgl/src/core/lv_obj_class.d \
 ./Drivers/lvgl/lvgl/src/core/lv_obj_draw.d \
-./Drivers/lvgl/lvgl/src/core/lv_obj_event.d \
-./Drivers/lvgl/lvgl/src/core/lv_obj_id_builtin.d \
 ./Drivers/lvgl/lvgl/src/core/lv_obj_pos.d \
-./Drivers/lvgl/lvgl/src/core/lv_obj_property.d \
 ./Drivers/lvgl/lvgl/src/core/lv_obj_scroll.d \
 ./Drivers/lvgl/lvgl/src/core/lv_obj_style.d \
 ./Drivers/lvgl/lvgl/src/core/lv_obj_style_gen.d \
 ./Drivers/lvgl/lvgl/src/core/lv_obj_tree.d \
-./Drivers/lvgl/lvgl/src/core/lv_refr.d 
+./Drivers/lvgl/lvgl/src/core/lv_refr.d \
+./Drivers/lvgl/lvgl/src/core/lv_theme.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -57,7 +63,7 @@ Drivers/lvgl/lvgl/src/core/%.o Drivers/lvgl/lvgl/src/core/%.su Drivers/lvgl/lvgl
 clean: clean-Drivers-2f-lvgl-2f-lvgl-2f-src-2f-core
 
 clean-Drivers-2f-lvgl-2f-lvgl-2f-src-2f-core:
-	-$(RM) ./Drivers/lvgl/lvgl/src/core/lv_group.cyclo ./Drivers/lvgl/lvgl/src/core/lv_group.d ./Drivers/lvgl/lvgl/src/core/lv_group.o ./Drivers/lvgl/lvgl/src/core/lv_group.su ./Drivers/lvgl/lvgl/src/core/lv_obj.cyclo ./Drivers/lvgl/lvgl/src/core/lv_obj.d ./Drivers/lvgl/lvgl/src/core/lv_obj.o ./Drivers/lvgl/lvgl/src/core/lv_obj.su ./Drivers/lvgl/lvgl/src/core/lv_obj_class.cyclo ./Drivers/lvgl/lvgl/src/core/lv_obj_class.d ./Drivers/lvgl/lvgl/src/core/lv_obj_class.o ./Drivers/lvgl/lvgl/src/core/lv_obj_class.su ./Drivers/lvgl/lvgl/src/core/lv_obj_draw.cyclo ./Drivers/lvgl/lvgl/src/core/lv_obj_draw.d ./Drivers/lvgl/lvgl/src/core/lv_obj_draw.o ./Drivers/lvgl/lvgl/src/core/lv_obj_draw.su ./Drivers/lvgl/lvgl/src/core/lv_obj_event.cyclo ./Drivers/lvgl/lvgl/src/core/lv_obj_event.d ./Drivers/lvgl/lvgl/src/core/lv_obj_event.o ./Drivers/lvgl/lvgl/src/core/lv_obj_event.su ./Drivers/lvgl/lvgl/src/core/lv_obj_id_builtin.cyclo ./Drivers/lvgl/lvgl/src/core/lv_obj_id_builtin.d ./Drivers/lvgl/lvgl/src/core/lv_obj_id_builtin.o ./Drivers/lvgl/lvgl/src/core/lv_obj_id_builtin.su ./Drivers/lvgl/lvgl/src/core/lv_obj_pos.cyclo ./Drivers/lvgl/lvgl/src/core/lv_obj_pos.d ./Drivers/lvgl/lvgl/src/core/lv_obj_pos.o ./Drivers/lvgl/lvgl/src/core/lv_obj_pos.su ./Drivers/lvgl/lvgl/src/core/lv_obj_property.cyclo ./Drivers/lvgl/lvgl/src/core/lv_obj_property.d ./Drivers/lvgl/lvgl/src/core/lv_obj_property.o ./Drivers/lvgl/lvgl/src/core/lv_obj_property.su ./Drivers/lvgl/lvgl/src/core/lv_obj_scroll.cyclo ./Drivers/lvgl/lvgl/src/core/lv_obj_scroll.d ./Drivers/lvgl/lvgl/src/core/lv_obj_scroll.o ./Drivers/lvgl/lvgl/src/core/lv_obj_scroll.su ./Drivers/lvgl/lvgl/src/core/lv_obj_style.cyclo ./Drivers/lvgl/lvgl/src/core/lv_obj_style.d ./Drivers/lvgl/lvgl/src/core/lv_obj_style.o ./Drivers/lvgl/lvgl/src/core/lv_obj_style.su ./Drivers/lvgl/lvgl/src/core/lv_obj_style_gen.cyclo ./Drivers/lvgl/lvgl/src/core/lv_obj_style_gen.d ./Drivers/lvgl/lvgl/src/core/lv_obj_style_gen.o ./Drivers/lvgl/lvgl/src/core/lv_obj_style_gen.su ./Drivers/lvgl/lvgl/src/core/lv_obj_tree.cyclo ./Drivers/lvgl/lvgl/src/core/lv_obj_tree.d ./Drivers/lvgl/lvgl/src/core/lv_obj_tree.o ./Drivers/lvgl/lvgl/src/core/lv_obj_tree.su ./Drivers/lvgl/lvgl/src/core/lv_refr.cyclo ./Drivers/lvgl/lvgl/src/core/lv_refr.d ./Drivers/lvgl/lvgl/src/core/lv_refr.o ./Drivers/lvgl/lvgl/src/core/lv_refr.su
+	-$(RM) ./Drivers/lvgl/lvgl/src/core/lv_disp.cyclo ./Drivers/lvgl/lvgl/src/core/lv_disp.d ./Drivers/lvgl/lvgl/src/core/lv_disp.o ./Drivers/lvgl/lvgl/src/core/lv_disp.su ./Drivers/lvgl/lvgl/src/core/lv_event.cyclo ./Drivers/lvgl/lvgl/src/core/lv_event.d ./Drivers/lvgl/lvgl/src/core/lv_event.o ./Drivers/lvgl/lvgl/src/core/lv_event.su ./Drivers/lvgl/lvgl/src/core/lv_group.cyclo ./Drivers/lvgl/lvgl/src/core/lv_group.d ./Drivers/lvgl/lvgl/src/core/lv_group.o ./Drivers/lvgl/lvgl/src/core/lv_group.su ./Drivers/lvgl/lvgl/src/core/lv_indev.cyclo ./Drivers/lvgl/lvgl/src/core/lv_indev.d ./Drivers/lvgl/lvgl/src/core/lv_indev.o ./Drivers/lvgl/lvgl/src/core/lv_indev.su ./Drivers/lvgl/lvgl/src/core/lv_indev_scroll.cyclo ./Drivers/lvgl/lvgl/src/core/lv_indev_scroll.d ./Drivers/lvgl/lvgl/src/core/lv_indev_scroll.o ./Drivers/lvgl/lvgl/src/core/lv_indev_scroll.su ./Drivers/lvgl/lvgl/src/core/lv_obj.cyclo ./Drivers/lvgl/lvgl/src/core/lv_obj.d ./Drivers/lvgl/lvgl/src/core/lv_obj.o ./Drivers/lvgl/lvgl/src/core/lv_obj.su ./Drivers/lvgl/lvgl/src/core/lv_obj_class.cyclo ./Drivers/lvgl/lvgl/src/core/lv_obj_class.d ./Drivers/lvgl/lvgl/src/core/lv_obj_class.o ./Drivers/lvgl/lvgl/src/core/lv_obj_class.su ./Drivers/lvgl/lvgl/src/core/lv_obj_draw.cyclo ./Drivers/lvgl/lvgl/src/core/lv_obj_draw.d ./Drivers/lvgl/lvgl/src/core/lv_obj_draw.o ./Drivers/lvgl/lvgl/src/core/lv_obj_draw.su ./Drivers/lvgl/lvgl/src/core/lv_obj_pos.cyclo ./Drivers/lvgl/lvgl/src/core/lv_obj_pos.d ./Drivers/lvgl/lvgl/src/core/lv_obj_pos.o ./Drivers/lvgl/lvgl/src/core/lv_obj_pos.su ./Drivers/lvgl/lvgl/src/core/lv_obj_scroll.cyclo ./Drivers/lvgl/lvgl/src/core/lv_obj_scroll.d ./Drivers/lvgl/lvgl/src/core/lv_obj_scroll.o ./Drivers/lvgl/lvgl/src/core/lv_obj_scroll.su ./Drivers/lvgl/lvgl/src/core/lv_obj_style.cyclo ./Drivers/lvgl/lvgl/src/core/lv_obj_style.d ./Drivers/lvgl/lvgl/src/core/lv_obj_style.o ./Drivers/lvgl/lvgl/src/core/lv_obj_style.su ./Drivers/lvgl/lvgl/src/core/lv_obj_style_gen.cyclo ./Drivers/lvgl/lvgl/src/core/lv_obj_style_gen.d ./Drivers/lvgl/lvgl/src/core/lv_obj_style_gen.o ./Drivers/lvgl/lvgl/src/core/lv_obj_style_gen.su ./Drivers/lvgl/lvgl/src/core/lv_obj_tree.cyclo ./Drivers/lvgl/lvgl/src/core/lv_obj_tree.d ./Drivers/lvgl/lvgl/src/core/lv_obj_tree.o ./Drivers/lvgl/lvgl/src/core/lv_obj_tree.su ./Drivers/lvgl/lvgl/src/core/lv_refr.cyclo ./Drivers/lvgl/lvgl/src/core/lv_refr.d ./Drivers/lvgl/lvgl/src/core/lv_refr.o ./Drivers/lvgl/lvgl/src/core/lv_refr.su ./Drivers/lvgl/lvgl/src/core/lv_theme.cyclo ./Drivers/lvgl/lvgl/src/core/lv_theme.d ./Drivers/lvgl/lvgl/src/core/lv_theme.o ./Drivers/lvgl/lvgl/src/core/lv_theme.su
 
 .PHONY: clean-Drivers-2f-lvgl-2f-lvgl-2f-src-2f-core
 

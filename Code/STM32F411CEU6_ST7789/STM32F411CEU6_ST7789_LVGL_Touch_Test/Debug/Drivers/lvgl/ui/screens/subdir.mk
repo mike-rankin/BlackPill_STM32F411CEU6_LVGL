@@ -5,13 +5,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Drivers/lvgl/ui/screens/ui_Screen1.c 
+../Drivers/lvgl/ui/screens/ui_Screen2.c 
 
 OBJS += \
-./Drivers/lvgl/ui/screens/ui_Screen1.o 
+./Drivers/lvgl/ui/screens/ui_Screen2.o 
 
 C_DEPS += \
-./Drivers/lvgl/ui/screens/ui_Screen1.d 
+./Drivers/lvgl/ui/screens/ui_Screen2.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -21,7 +21,7 @@ Drivers/lvgl/ui/screens/%.o Drivers/lvgl/ui/screens/%.su Drivers/lvgl/ui/screens
 clean: clean-Drivers-2f-lvgl-2f-ui-2f-screens
 
 clean-Drivers-2f-lvgl-2f-ui-2f-screens:
-	-$(RM) ./Drivers/lvgl/ui/screens/ui_Screen1.cyclo ./Drivers/lvgl/ui/screens/ui_Screen1.d ./Drivers/lvgl/ui/screens/ui_Screen1.o ./Drivers/lvgl/ui/screens/ui_Screen1.su
+	-$(RM) ./Drivers/lvgl/ui/screens/ui_Screen2.cyclo ./Drivers/lvgl/ui/screens/ui_Screen2.d ./Drivers/lvgl/ui/screens/ui_Screen2.o ./Drivers/lvgl/ui/screens/ui_Screen2.su
 
 .PHONY: clean-Drivers-2f-lvgl-2f-ui-2f-screens
 

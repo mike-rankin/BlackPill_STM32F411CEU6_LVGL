@@ -5,34 +5,22 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_buf_pxp.c \
 ../Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp.c \
-../Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_fill.c \
-../Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_img.c \
-../Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_layer.c \
-../Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_cfg.c \
-../Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_osa.c \
-../Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_utils.c 
+../Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.c \
+../Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.c \
+../Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.c 
 
 OBJS += \
-./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_buf_pxp.o \
 ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp.o \
-./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_fill.o \
-./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_img.o \
-./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_layer.o \
-./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_cfg.o \
-./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_osa.o \
-./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_utils.o 
+./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.o \
+./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.o \
+./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.o 
 
 C_DEPS += \
-./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_buf_pxp.d \
 ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp.d \
-./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_fill.d \
-./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_img.d \
-./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_layer.d \
-./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_cfg.d \
-./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_osa.d \
-./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_utils.d 
+./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.d \
+./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.d \
+./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -42,7 +30,7 @@ Drivers/lvgl/lvgl/src/draw/nxp/pxp/%.o Drivers/lvgl/lvgl/src/draw/nxp/pxp/%.su D
 clean: clean-Drivers-2f-lvgl-2f-lvgl-2f-src-2f-draw-2f-nxp-2f-pxp
 
 clean-Drivers-2f-lvgl-2f-lvgl-2f-src-2f-draw-2f-nxp-2f-pxp:
-	-$(RM) ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_buf_pxp.cyclo ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_buf_pxp.d ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_buf_pxp.o ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_buf_pxp.su ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp.cyclo ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp.d ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp.o ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp.su ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_fill.cyclo ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_fill.d ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_fill.o ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_fill.su ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_img.cyclo ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_img.d ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_img.o ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_img.su ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_layer.cyclo ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_layer.d ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_layer.o ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_layer.su ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_cfg.cyclo ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_cfg.d ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_cfg.o ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_cfg.su ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_osa.cyclo ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_osa.d ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_osa.o ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_osa.su ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_utils.cyclo ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_utils.d ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_utils.o ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_pxp_utils.su
+	-$(RM) ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp.cyclo ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp.d ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp.o ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp.su ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.cyclo ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.d ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.o ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.su ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.cyclo ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.d ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.o ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.su ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.cyclo ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.d ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.o ./Drivers/lvgl/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.su
 
 .PHONY: clean-Drivers-2f-lvgl-2f-lvgl-2f-src-2f-draw-2f-nxp-2f-pxp
 
